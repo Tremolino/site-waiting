@@ -4,7 +4,11 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import os
 
-app = FastAPI()
+app = FastAPI(
+    docs_url=None,
+    openapi_url=None,
+)
+
 
 app.mount("/fonts", StaticFiles(directory="./fonts"), name="fonts")
 templates = Jinja2Templates(directory="./templates")
@@ -18,4 +22,3 @@ async def submit_email(email: str = Form(...)):
     with open("emails.txt", "a") as file:
         file.write(email + "\n")
     return RedirectResponse("/", status_code=303)
-
