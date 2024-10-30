@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tremolino - Yacht Season</title>
+    <style>
+        @font-face {
+            font-family: "Tre";
+            src: url("../fonts/NAURYZREDKEDS.ttf") format("truetype");
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+    font-family: Tre, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(270deg, #1e3c72, #2a69ac, #3c8dbc, #6cb9e4);
+    background-size: 400% 400%; /* Increased size for smoother animation */
+    color: #333;
+    position: relative;
+    animation: gradientAnimation 30s ease infinite; /* Duration for smooth animation */
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    10% { background-position: 50% 20%; }
+    20% { background-position: 80% 80%; }
+    30% { background-position: 30% 40%; }
+    40% { background-position: 60% 10%; }
+    50% { background-position: 100% 0%; }
+    60% { background-position: 20% 100%; }
+    70% { background-position: 90% 60%; }
+    80% { background-position: 10% 30%; }
+    90% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+        .top-left-banner {
+            position: absolute; /* Keep absolute positioning */
+            top: 20px; /* Distance from the top */
+            left: 20px; /* Distance from the left */
+            padding-bottom: 6px;
+            padding-inline-start: 24px;
+            padding-inline-end: 24px;
+            padding-top: 15px;
+
+            background: rgba(247, 247, 247, 0.32); /* Semi-transparent background */
+            color: #ffffff;
+            border-radius: 84px;
+            font-size: 2.8em;
+            font-family: "Tre", sans-serif; /* Ensure it uses the correct font */
+
+
+            box-shadow: 0px 4px 19.6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(18.55px);
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            background: rgba(247, 247, 247, 0.32);
+            box-shadow: 0px 4px 19.6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(18.55px);
+            padding: 40px 20px 70px;
+            border-radius: 55px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .form h2 {
+            font-size: 3em;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .input-wrapper {
+            font-family: Tre;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .input {
+            width: 170px;
+            height: 40px;
+            outline: none;
+            padding-left: 15px;
+            font-size: 0.9em;
+            background: rgba(247, 247, 247, 0.3);
+            color:#003867;
+            backdrop-filter: blur(18.55px);
+            border-radius: 14px;
+            border: 1px solid #d0d7e1;
+            margin-bottom: 9px;
+
+        }
+
+        .Subscribe-btn {
+            height: 40px;
+            padding: 0 15px;
+            border: none;
+            border-radius: 14px;
+            color: #ffffff;
+            cursor: pointer;
+            background-color: #205c7e;
+            transition: all 0.3s;
+            font-size: 0.7em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 9px;
+        }
+
+        .Subscribe-btn:hover .arrow {
+            animation: jello-vertical 0.9s both;
+            transform-origin: left;
+        }
+
+        @keyframes jello-vertical {
+            0% { transform: scale3d(1, 1, 1); }
+            30% { transform: scale3d(0.75, 1.25, 1); }
+            40% { transform: scale3d(1.25, 0.75, 1); }
+            50% { transform: scale3d(0.85, 1.15, 1); }
+            65% { transform: scale3d(1.05, 0.95, 1); }
+            75% { transform: scale3d(0.95, 1.05, 1); }
+            100% { transform: scale3d(1, 1, 1); }
+        }
+
+        .Subscribe-btn:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="top-left-banner">ТРЕМОЛИНО</div>
+
+    <div class="container">
+        <div class="form">
+            <h2>Будьте в курсе запуска яхтенного сезона 2025!</h2>
+            <form action="/submit" method="post">
+                <div class="input-wrapper">
+                    <input placeholder="your@mail.com" class="input" name="email" type="email" required />
+                    <button class="Subscribe-btn" type="submit">
+                        Subscribe
+                        <svg class="arrow" viewBox="0 0 38 15" height="20" width="20" xmlns="http://www.w3.org/2000/svg" fill="white">
+                            <path d="M10 7.519l-.939-.344h0l.939.344zm14.386-1.205l-.981-.192.981.192zm1.276 5.509l.537.843.148-.094.107-.139-.792-.611zm4.819-4.304l-.385-.923h0l.385.923zm7.227.707a1 1 0 0 0 0-1.414L31.343.448a1 1 0 0 0-1.414 0 1 1 0 0 0 0 1.414l5.657 5.657-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364z" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
